@@ -37,10 +37,9 @@ Install BioSimSpace (https://github.com/michellab/BioSimSpace/)
 Copy the directory `Parameters` and the scripts `complex_lambdarun-comb.sh` and `ligand_lambdarun-comb.sh` into the directory `forward`. The `Parameters` folder should contain the main configuration file `lambda.cfg` which the user should verify and modify accordingly.
 
 For each transformation:
-1) Create a directory named `MOL1-MOL2`. In the directory run `python ../init.py` to initialise the directory. 
+1) Initiate the transformation `MOL1_MOL2` by running `init.py MOL1 MOL2` from within the `forward` directory. 
 2) The `lambda.cfg` file contains various parameters, namely the number of moves and cycles, the timestep, the type of constraints, the lambda windows used and the platform on which to run the calculation. 
-3) Run the ```ligand_lambdarun-comb.sh``` and ```complex_lambdarun-comb.sh``` scripts. Note that the lambda lists in these scripts should correspond to the `lambda.cfg`. (Fixme)
-- Script ```ligand_lambdarun-comb.sh``` runs the command for the unbound perturbations, whilst ```complex_lambdarun-comb.sh``` runs the bound perturbations. 
+3) Run the ```ligand_run.sh``` and ```complex_run.sh``` scripts to carry out the simulations.
 4) Gather the results by runing ```analyse_freenrg mbar -i lambda-*/simfile.dat -o out.dat -p 90``` in all discharge and vanish directories. Further calculate the corrections:
 
 #### Corrections:
